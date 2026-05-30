@@ -1,0 +1,357 @@
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Header & Footer */
+header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header button {
+  background: #1abc9c;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+header button:hover {
+  background: #16a085;
+}
+
+footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+/* Content */
+.content {
+  padding: 25px;
+  display: flex;
+  justify-content: center;   /* konten rata tengah */
+}
+
+/* Dashboard Wrapper */
+.dashboard-wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.6s ease; /* animasi masuk */
+}
+
+.dashboard-wrapper h2 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+/* Dashboard menu: grid of cards */
+.dashboard-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.dashboard-menu .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 14px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(20,30,50,0.04);
+  border: 1px solid #eef3f7;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.dashboard-menu .card i {
+  font-size: 28px;
+  color: #5d6d7a;
+}
+
+.dashboard-menu .card span {
+  display: block;
+  font-size: 14px;
+}
+
+.dashboard-menu .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(20,30,50,0.09);
+  background: linear-gradient(180deg,#f8fbfd,#ffffff);
+}
+
+/* Per-entity accent colors (optional) */
+.dashboard-menu .card.nasabah i { color: #8e44ad; }
+.dashboard-menu .card.rekening i { color: #16a085; }
+.dashboard-menu .card.transaksi i { color: #2980b9; }
+.dashboard-menu .card.cabang i { color: #d35400; }
+.dashboard-menu .card.relasi i { color: #2c3e50; }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(20,30,50,0.06);
+  border: 1px solid #eef2f6;
+}
+
+/* Table card wrapper for spacing */
+.table-card {
+  max-width: 1100px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.table-card h1 {
+  font-size: 32px;
+  margin: 14px 0 8px 0;
+}
+
+/* Center table headers and action button */
+.table-card {
+  text-align: center;
+}
+
+.table-card a.btn-add {
+  display: inline-block;
+  margin: 8px auto 16px auto;
+}
+
+.table-card table {
+  margin: 0 auto 20px auto;
+}
+
+table th, table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f4f8;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table th {
+  background: linear-gradient(180deg,#34495e,#2c3e50);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+table tr:nth-child(even) {
+  background: #fbfdff;
+}
+
+table tr:hover {
+  background: #fcfeff;
+}
+
+/* Make action buttons in tables a bit smaller */
+table a.btn, table button.btn {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+/* Responsive: allow horizontal scroll on small screens */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table th, table td {
+    white-space: nowrap;
+  }
+}
+
+/* Forms & CRUD pages */
+.content h1, .content h2 {
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.form-card {
+  background: #ffffff;
+  padding: 20px 22px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(20,30,50,0.06);
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.form-row label {
+  width: 160px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row input[type="datetime-local"],
+.form-row select,
+.form-row textarea {
+  flex: 1 1 auto;
+  padding: 10px 12px;
+  border: 1px solid #d9e2ec;
+  border-radius: 6px;
+  background: #fcfeff;
+  font-size: 14px;
+}
+
+.form-row textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.form-actions .btn {
+  padding: 8px 14px;
+}
+
+/* Delete confirmation */
+.confirm-card p {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+/* Small screens: stack form rows */
+@media (max-width: 680px) {
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row label {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+}
+
+/* Utility */
+.muted { color: #7a8a99; font-size: 13px; }
+
+
+/* Buttons */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
+  transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-add {
+  background: #1abc9c;
+  color: #fff;
+}
+
+.btn-edit {
+  background: #27ae60;
+  color: #fff;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-menu a {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+/* Table toolbar and selection */
+.table-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.table-toolbar .btn {
+  padding: 8px 12px;
+}
+
+table td input.row-select {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+tr.selected-row {
+  background: #eef9f4;
+}
+}
